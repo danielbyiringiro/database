@@ -1,0 +1,32 @@
+{% extends "reglog.html" %}
+
+{% block title %}
+    Onboarding
+{% endblock %}
+
+{% block main %}
+<p class="heading">Welcome to AMAGAMBO</p>
+<p class="heading" id="small">Your task is to guess a 6 lettered Kinyarwanda Word</p>
+<p class="heading" id="small">You have 7 attempts</p>
+<div class="feedback">
+    <p class="heading" id="small">Feedback:</p>
+    <ul>
+        <li class="green format">
+            <div class="letter" style="background-color: #528d4e;"></div>
+            <p>Green: A character is in its right position.</p>
+        </li> 
+        <li class="yellow format">
+            <div class="letter" style="background-color: #b49f39;"></div>
+            <p>Yellow: A character is in the word but in the wrong position.</p>
+        </li>
+        <li class="red format">
+            <div class="letter" style="background-color: #ea433b;"></div>
+            <p>Red: The character is not in the word.</p>
+        </li>  
+    </ul>
+</div>
+<p class="heading" id="small">Good luck and have fun playing the game!</p>
+<form action="/onboard" method="post">
+    <input type="submit" value="Done" class="btn btn-primary">
+</form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "reglog.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{%block game%}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        gap: 20px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:last-child th {
+        margin: 0;
+    }
+</style>
+{% endblock %}
+{% block main %}
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Total Users</th>
+            <th>Guess</th>
+            <th>Un Guessed</th>
+            <th>Word</th>
+        </thead>
+        <tbody>
+            {% for record in details %}
+                <tr>
+                    <td>{{record['date']}}</td>
+                    <td>{{record['total_users']}}</td>
+                    <td>{{record['guessed']}}</td>
+                    <td>{{record['unguessed']}}</td>
+                    <td>{{record['word']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

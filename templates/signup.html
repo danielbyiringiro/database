@@ -1,0 +1,20 @@
+{% extends "reglog.html" %}
+
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" class="mx-auto">
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="password_confirm" name="password_confirm" placeholder="Password (Again)" type="password" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+    </form>
+{% endblock %}

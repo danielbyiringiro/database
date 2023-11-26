@@ -1,0 +1,203 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rancho',serif;
+    font-size: 15px;
+}
+
+.App {
+    text-align: center;
+    background-color: #121212;
+    width: 100vw;
+    color: white;
+}
+
+.game {
+    width: 100vw;
+    height: calc(100vh - 170px);
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+
+.board {
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex: 33%;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.letter {
+    flex: 33%;
+    height: 100%;
+    border: 1px solid grey;
+    margin: 5px;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#correct {
+    background-color: #528d4e;
+}
+
+#almost {
+    background-color: #b49f39;
+}
+
+#error {
+    background-color: #ea433b;
+}
+
+.keyboard {
+    width: 700px;
+    height: 300px;
+    margin-top: 60px;
+}
+
+.key1 {
+    flex: 33%;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.key2 {
+    flex: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
+
+.key3 {
+    flex: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
+
+.flash {
+    background-color: #537fbe;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    position: fixed;
+    top: 65px;
+    right: 20px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+.key {
+    width: 50px;
+    height: 70px;
+    margin: 5px;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    background-color: grey;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+#big {
+    width: 100px;
+    height: 70px;
+    margin: 5px;
+    border-radius: 4px;
+    display: grid;
+    font-size: 20px;
+    background-color: grey;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.navbar-brand 
+{
+    font-size: 24px; 
+    text-decoration: none; 
+}
+
+.navbar-nav 
+{
+    display: flex;
+    align-items: center;
+}
+  
+.navbar-nav .nav-item 
+{
+    list-style: none; 
+    margin-left: 10px; 
+}
+  
+
+.navbar-nav .nav-link 
+{
+    text-decoration: none;
+    color: black; 
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.navbar-nav .nav-item:last-child {
+    margin-left: 5px; /* Add 5px margin to the left of the last navigation item (Logout link) */
+}
+
+.not-supported-message{
+    display: none;
+    padding: 0;
+}
+@media (max-width: 500px) {
+    /* Styles for screens with a maximum width of 500px (e.g., mobile phones) */
+    .not-supported-message {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: red;
+        padding: 20px;
+    }
+
+    /* Hide the game board and keyboard for smaller screens */
+    .game, .keyboard {
+        display: none;
+    }
+
+    footer 
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    /* Styles for screens with a maximum width of 1000px (e.g., tablets) */
+    .game 
+    {
+        height: calc(100vh - 170px);
+    }
+    footer 
+    {
+        display: none;
+    }
+}

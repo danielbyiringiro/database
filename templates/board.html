@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block main %}
+<div id="alert" class="alert"></div>
+<div class="game">
+    <div class="board">
+        {% for i in range(7) %}
+            <div class="row">
+                {% for j in range(6) %}
+                    {{ letter(i, j, board, color_board) | safe}}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="keyboard">
+        <div id="wordleForm">
+            {% for row in keyboard %}
+                <div class="{{row}}">
+                {% for key in keyboard[row] %}
+                    <div id="{% if key == 'ENTER' or key == 'DELETE' %}big{% endif %}">
+                        <input type="hidden" value="{{ board | safe }}" name="board" id="board">
+                        <input type="hidden" value="{{ color_board | safe }}" name="color_board" id="color_board">
+                        <button onclick="game('{{key}}')" id="{{ key }}" class="{% if key != 'ENTER' and key != 'DELETE' %}key{% endif %}">{{ key }}</button>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
